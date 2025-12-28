@@ -1,0 +1,70 @@
+
+<div class="background"></div>
+<div class="over"></div>
+<div class="transfer-container">
+  <h2>Transfer Entry</h2>
+
+  <form [formGroup]="transferForm" (ngSubmit)="submitTransfer()" class="transfer-form">
+
+    <div class="form-group">
+      <label>Asset:</label>
+      <select formControlName="assetId">
+        <option value="" disabled>Select Asset</option>
+        <option *ngFor="let asset of assets" [value]="asset.id">{{ asset.name }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Quantity:</label>
+      <input type="number" formControlName="quantity" placeholder="Enter quantity" />
+    </div>
+
+    <div class="form-group">
+      <label>From Base:</label>
+      <select formControlName="fromBaseId">
+        <option value="" disabled>Select From Base</option>
+        <option *ngFor="let base of bases" [value]="base.id">{{ base.name }} - {{ base.location }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>To Base:</label>
+      <select formControlName="toBaseId">
+        <option value="" disabled>Select To Base</option>
+        <option *ngFor="let base of bases" [value]="base.id">{{ base.name }} - {{ base.location }}</option>
+      </select>
+    </div>
+
+    <div class="form-group" style="flex: 1 1 100%; text-align: center;">
+      <button type="submit">Add Transfer</button>
+      <button type="button" class="back-btn" (click)="goback()">Back</button>
+    </div>
+
+  </form>
+
+  <h3>Transfer History</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Asset</th>
+        <th>Quantity</th>
+        <th>From Base</th>
+        <th>To Base</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+  <tr *ngFor="let t of transferList">
+  <td>{{ t.id }}</td>
+  <td>{{ t.asset.name }}</td>
+  <td>{{ t.quantity }}</td>
+  <td>{{ t.fromBase?.name }}</td>
+  <td>{{ t.toBase?.name }}</td>
+  <td>{{ t.date | date:'shortDate' }}</td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+

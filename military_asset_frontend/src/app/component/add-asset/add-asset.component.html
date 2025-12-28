@@ -1,0 +1,30 @@
+
+<div class="background"></div>
+<div class="over"></div>
+
+<div class="add-asset-container">
+  <h2>Add New Asset</h2>
+
+  <form (ngSubmit)="onSubmit()" class="form-container">
+
+    <label>Asset Name *</label>
+    <input type="text" [(ngModel)]="asset.name" name="name" required />
+
+    <label>Asset Type *</label>
+    <input type="text" [(ngModel)]="asset.type" name="type" required />
+
+    <label>Asset Quantity *</label>
+    <input type="number" [(ngModel)]="asset.quantity" name="quantity" min="0" required />
+
+    <label>Select Base *</label>
+    <select [(ngModel)]="asset.base" name="base" required>
+      <option [ngValue]="{id:0}" disabled>Select a Base</option>
+      <option *ngFor="let base of bases" [ngValue]="base">{{ base.name }}</option>
+    </select>
+
+    <button type="submit" [disabled]="loading">{{ loading ? 'Saving...' : 'Add Asset' }}</button>
+    <button type="button" class="back-btn" (click)="goBack()">Back</button>
+  </form>
+
+  <p class="message" *ngIf="message">{{ message }}</p>
+</div>

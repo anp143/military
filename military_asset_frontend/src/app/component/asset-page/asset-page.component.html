@@ -1,0 +1,5 @@
+<!-- Show asset list when form is not open -->
+<app-view-asset *ngIf="!showForm" (addAsset)="showForm = true"></app-view-asset>
+
+<!-- Show add asset form when showForm is true -->
+<app-add-asset *ngIf="showForm" (assetAdded)="showForm = false"></app-add-asset>

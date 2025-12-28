@@ -1,0 +1,97 @@
+<h1>Military Asset Management System</h1>
+
+<div class="container">
+
+  <nav class="sidebar">
+    <ul>
+      <li><a (click)="scrollTo('Home')">Home</a></li>
+      <li><a (click)="scrollTo('About')">About Us</a></li>
+      <li><a (click)="scrollTo('Contact')">Contact Us</a></li>
+      <!-- FIXED: Added routerLinkActive and prevent default click reload -->
+      <li><a routerLink="/login" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <router-outlet></router-outlet> <!-- ✅ Added this so login page will render here -->
+
+    <section id="Home" class="section">
+      <div class="split-container">
+        <div class="split-image">
+          <img src="assets/d.webp" alt="Military Assets" />
+        </div>
+
+        <div class="split-text">
+          <h2>Military Asset Management System (MAMS)</h2>
+          <p>
+            The <strong>MAMS</strong> is a secure, intelligent, and role-based solution
+            designed to help commanders and logistics teams effectively manage assets.
+          </p>
+          <p>
+            Monitor <strong>Opening and Closing Balances</strong>, record
+            <strong>Purchases, Transfers, Assignments, and Expenditures</strong>,
+            and maintain complete visibility over operations across multiple bases.
+          </p>
+
+          <div class="features">
+            <h3>Core Features</h3>
+            <ul>
+              <li>📊 Comprehensive dashboard with key asset metrics and visual summaries</li>
+              <li>🔄 Real-time tracking of purchases, transfers, and asset movements</li>
+              <li>🎯 Assignment and expenditure tracking for efficient utilization</li>
+              <li>🛡️ Role-based access control ensuring secure and tiered access</li>
+              <li>🧾 Complete transaction logging for auditing and transparency</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="About" class="section">
+      <div class="split-container">
+        <div class="split-image">
+          <img src="assets/h.jpg" alt="About Us" />
+        </div>
+
+        <div class="split-text">
+          <h2>About Us</h2>
+          <p>
+            We are a team of engineers, defense specialists, and software professionals
+            dedicated to transforming how military organizations handle logistics and asset management.
+          </p>
+          <h3>Our Vision</h3>
+          <p>
+            To build secure and intelligent systems that empower defense organizations
+            with real-time insights and strengthen military logistics worldwide.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="Contact" class="section">
+      <h2 class="ct">Get in Touch</h2>
+      <div class="split-container">
+        <div class="split-text a">
+          <b>Commander</b><br />
+          Name: Ajay <br />
+          Email: hello@IndianArmy.com
+        </div>
+        <div class="split-text b">
+          <b>Admin</b><br />
+          Name: Annappa Nagaraj <br />
+          Email: hello@IndianArmy.com
+        </div>
+        <div class="split-text c">
+          <b>Officer</b><br />
+          Name: Rakesh <br />
+          Email: hello@IndianArmy.com
+        </div>
+      </div>
+    </section>
+
+    <footer class="cp">
+      © 2025 Military Asset Management System. Unauthorized access or distribution is strictly prohibited.<br>
+      Developed By Annappa Nagaraj
+    </footer>
+  </main>
+</div>

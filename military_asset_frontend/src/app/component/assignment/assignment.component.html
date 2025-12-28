@@ -1,0 +1,55 @@
+<div class="background"></div>
+<div class="over"></div>
+
+<div class="assignment-container">
+  <h2>Military Assign Assets</h2>
+  <form [formGroup]="assignmentForm" (ngSubmit)="submitAssignment()">
+    <label>Asset :</label>
+    <select formControlName="assetId">
+      <option value="">Select Asset</option>
+      <option *ngFor="let a of assets" [value]="a.id">{{ a.name }}</option>
+    </select>
+
+    <label>Base :</label>
+    <select formControlName="baseId">
+      <option value="">Select Base</option>
+      <option *ngFor="let b of bases" [value]="b.id">{{ b.name }}</option>
+    </select>
+
+    <label>Personnel :</label>
+    <input type="text" formControlName="personnel" placeholder="Enter personnel name">
+
+    <label>Quantity :</label>
+    <input type="number" formControlName="quantity" min="1">
+
+    <button type="submit">Assign</button>
+   <button type="button" class="back-btn" (click)="goBack()">Back</button>
+  </form>
+ 
+
+
+
+<h3>Assignments</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Asset</th>
+      <th>Base</th>
+      <th>Personnel</th>
+      <th>Quantity</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr *ngFor="let t of assignmentList">
+  <td>{{ t.asset?.name }}</td>
+  <td>{{ t.fromBase?.name || 'N/A' }}</td>
+  <td>{{ t.personnel || 'N/A' }}</td>
+  <td>{{ t.quantity }}</td>
+  <td>{{ t.date | date:'shortDate' }}</td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+

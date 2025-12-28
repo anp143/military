@@ -1,0 +1,34 @@
+
+<div class="background"></div>
+<div class="over"></div>
+
+<div class="view-assets-container">
+  <h2> Military Assets Lists</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Quantity</th>
+        <th>Base</th> <!-- Added this column -->
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let asset of assets">
+        <td>{{ asset.id }}</td>
+        <td>{{ asset.name }}</td>
+        <td>{{ asset.type }}</td>
+        <td>{{ asset.quantity }}</td>
+        <td>{{ asset.base?.name || 'Unassigned' }}</td> <!-- Display base safely -->
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="deleteAsset(asset.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-primary mt-3" (click)="addAsset.emit()">Add Asset</button>
+  <button (click)="goback()" class="back-btn">Back </button>
+   
+</div>

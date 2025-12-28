@@ -1,0 +1,173 @@
+/* === Background Image === */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/assets/f.jpeg") no-repeat center center fixed;
+  background-size: cover;
+
+}
+
+/* === Dark overlay for readability === */
+.over {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55); /* darker overlay */
+  z-index: -1;
+}
+
+/* === Main purchase container === */
+.transfer-container {
+  max-width: 700px;
+  margin: 70px auto;
+  padding: 40px 50px;
+  background: rgba(255, 255, 255, 0.15); /* subtle transparency */
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  font-family: "Poppins", sans-serif;
+  color: #3d3c3c;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  //  background: url("/assets/e.jpg") no-repeat center center fixed;
+  background-size: cover;
+    z-index: -2;
+}
+
+.transfer-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
+}
+
+
+h2 {
+  text-align: center;
+  color: #453131;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: #091017;
+  margin-top: 30px;
+  margin-bottom: 12px;
+  border-left: 4px solid #3b82f6;
+  padding-left: 10px;
+  font-weight: bolder;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  font-weight: 600;
+  color: #000000;
+  letter-spacing: 0.5px;
+  gap:8px
+}
+
+select,
+input[type="number"] {
+  width: 100%;
+  padding: 12px 1px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  font-size: 15px;
+  color: #111;
+  background: rgba(158, 155, 155, 0.9);
+  transition: all 0.3s ease;
+}
+
+select:focus,
+input[type="number"]:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+/* === Submit Button === */
+button {
+  background: linear-gradient(90deg, #eb2549, #1e40af);
+  color: #ffffff;
+  padding: 12px 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+   align-self:flex-start;
+  transition: all 0.3s ease;
+  width: 50%;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #1e40af, #172554);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
+}
+
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: #0e1012;
+  font-size: 0.95rem;
+}
+
+th {
+  background: linear-gradient(90deg, #242528, #1e3a8a);
+  color: white;
+  text-align: left;
+  padding: 14px 16px;
+  font-weight: 600;
+}
+
+td {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+tr:hover td {
+  background: rgba(59, 130, 246, 0.2);
+  transition: 0.3s ease;
+}
+
+/* === Responsive === */
+@media (max-width: 700px) {
+  .purchase-container {
+    margin: 30px 15px;
+    padding: 25px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  table,
+  th,
+  td {
+    font-size: 0.85rem;
+  }
+}

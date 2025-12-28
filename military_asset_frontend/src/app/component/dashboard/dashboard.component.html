@@ -1,0 +1,40 @@
+
+
+<div class="dashboard-container">
+   <h1>Military Asset Management</h1>
+ <h2>Welcome, {{userRole}}!</h2>
+ <p>Select an action to manage assets and transactions :</p>
+
+ <div class="card-container">
+  <div class="card" *ngIf="isAdmin || isCommander">
+    <h3>Manage Assets</h3>
+    <button (click)="navigateTo('asset')">View/Add Assets</button>
+  </div>
+
+  <div class="card" *ngIf="isAdmin || isCommander || isOfficer">
+    <h3>Purchase Entry</h3>
+    <button (click)="navigateTo('purchase')">Add Purchase</button>
+  </div>
+
+  <div class="card" *ngIf="isAdmin || isCommander || isOfficer">
+    <h3>Trasnfer Entry</h3>
+    <button (click)="navigateTo('transfer')">Add Transfer</button>
+  </div>
+
+  <div class="card" *ngIf="isAdmin || isCommander ">
+    <h3>Assignment Entry</h3>
+    <button (click)="navigateTo('assignment')">Add Assignment</button>
+  </div>
+
+  <div class="card" *ngIf="isAdmin || isCommander || isOfficer">
+    <h3>Expenditure </h3>
+    <button (click)="navigateTo('expenditure')">Record Expenditure</button>
+  </div>
+
+  <div class="card">
+    <h3>Stock Report</h3>
+    <button (click)="navigateTo('report')">View Reports</button>
+  </div>
+ </div>
+</div>
+

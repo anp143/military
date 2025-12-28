@@ -1,0 +1,37 @@
+<div class="background"></div>
+<div class="over"></div>
+<div class="container">
+  <h2>📊 Stock Report Dashboard</h2>
+
+  <table >
+    <thead >
+      <tr>
+        <th>Asset Name</th>
+        <th>Base</th>
+        <th>Opening</th>
+        <th>Purchases</th>
+        <th>Transfers In</th>
+        <th>Transfers Out</th>
+        <th>Assignments</th>
+        <th>Expenditures</th>
+        <th>Closing</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of reports">
+        <td>{{ r.assetName }}</td>
+        <td>{{ r.baseName }}</td>
+        <td>{{ r.openingBalance }}</td>
+        <td>{{ r.purchases }}</td>
+        <td>{{ r.transfersIn }}</td>
+        <td>{{ r.transfersOut }}</td>
+        <td>{{ r.assignments }}</td>
+        <td>{{ r.expenditures }}</td>
+        <td><strong>{{ r.closingBalance }}</strong></td>
+      </tr>
+    </tbody>
+    
+  </table>
+ <button (click)="goback()"> Back </button>
+</div>
+

@@ -1,0 +1,22 @@
+<div class="background"></div>
+<div class="over"></div>
+
+<div class="form-container">
+  <h2>SIGN IN</h2>
+  <form (ngSubmit)="onLogin($event)">
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" [(ngModel)]="username" required />
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" [(ngModel)]="password" required />
+  </div>
+
+  <button type="submit" class="btn">Login</button>
+</form>
+
+<p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+</div>

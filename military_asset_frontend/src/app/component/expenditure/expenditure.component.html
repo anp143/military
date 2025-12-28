@@ -1,0 +1,27 @@
+<div class="background"></div>
+<div class="over"></div>
+
+<div class="expenditure-container">
+    <h2>Expenditures Entry</h2>
+    <form [formGroup]="expenditureForm" (ngSubmit)="submitExpenditure()">
+
+    <label>Base :</label>
+    <select formControlName="baseId">
+      <option value="">Select Base</option>
+      <option *ngFor="let b of bases" [value]="b.id">{{ b.name }}</option>
+    </select>
+
+    <label>Equipments :</label>
+      <select formControlName="assetId">
+      <option value="">Select Asset</option>
+      <option *ngFor="let a of assets" [value]="a.id">{{ a.name }}</option>
+    </select>
+        <label>Quantity Used/Damaged :</label>
+        <input type="number" formControlName="quantity" placeholder=" Enter quantity" min="1">
+
+        <button type="submit">  ADD Expenditures</button>
+
+        <button type="button" class="back-btn" (click)="goback()" > Back</button>
+    </form>
+      <p class="message" *ngIf="message">{{ message }}</p>
+</div>
