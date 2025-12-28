@@ -19,8 +19,7 @@ military/
 ├── military_asset_frontend/ → Angular Frontend
 └── Military_Asset_backend/ → Spring Boot Backend
 
-yaml
-Copy code
+
 
 ---
 
@@ -52,13 +51,40 @@ Runs on: http://localhost:4200
 Annappa N
 GitHub: https://github.com/anp143
 
-yaml
-Copy code
 
----
+## 📸 Screenshots
 
-### Step-by-Step for Notepad:
+### Home Page
+![Home Page](military_asset_frontend/src/assets/screenshots/home.png)
 
-1. Open **PowerShell** in your project folder:
-```powershell
-notepad README.md
+### Login Page
+![Login Page](military_asset_frontend/src/assets/screenshots/login.png)
+
+### Dashboard Page
+![Dashboard Page](military_asset_frontend/src/assets/screenshots/dashboard.png)
+
+### Assets Page
+![All Assets](military_asset_frontend/src/assets/screenshots/asset list.png)
+
+
+### purchase Page
+![Purchase Page](military_asset_frontend/src/assets/screenshots/purchase.png)
+
+### transfer Page
+![Transfer Page](military_asset_frontend/src/assets/screenshots/transfer.png)
+
+### Assignment Page
+![Assignments](military_asset_frontend/src/assets/screenshots/Assignment.png)
+
+### Expenditure
+![Expenditure](military_asset_frontend/src/assets/screenshots/Expenditure.png)
+
+### Stock Report
+![Stock Report](military_asset_frontend/src/assets/screenshots/report.png)
+
+
+
+
+
+
+
